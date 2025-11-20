@@ -1,40 +1,77 @@
-# Gitignore for the frontend and backend of the application
+# -------------------------------
+# Global / OS Junk
+# -------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
 
-#backend
+# -------------------------------
+# Backend (Python / FastAPI)
+# -------------------------------
 __pycache__/
 *.py[cod]
 *$py.class
 
+# Shared objects
 *.so
 
+# Virtual environments
 .venv/
 venv/
 env/
 ENV/
-.env
 .virtualenv/
 .python-env/
 
+# Python packaging
 build/
 dist/
-develop-eggs/
 downloads/
 .eggs/
 *.egg-info
 .installed.cfg
 *.egg
 
+# Python tooling
 *.manifest
 *.spec
-
 *.log
+*.pid
 
+# Environment variables
+.env
+
+# -------------------------------
+# IDE / Editor
+# -------------------------------
 .vscode/
 .idea/
+*.iml
 *.code-workspace
 
-.DS_Store
-Thumbs.db
-desktop.ini
+# -------------------------------
+# Flutter / Dart
+# -------------------------------
 
-*.pid
+# Dart / Pub state
+/frontend/.dart_tool/
+/frontend/.packages
+/frontend/.pub/
+/frontend/.pub-cache/
+
+# Flutter build output
+/frontend/build/
+/frontend/coverage/
+
+# Flutter metadata
+/frontend/.metadata
+/frontend/.flutter-plugins
+/frontend/.flutter-plugins-dependencies
+
+# Platform folders (generated)
+frontend/android/
+frontend/ios/
+frontend/linux/
+frontend/macos/
+frontend/windows/
+frontend/web/

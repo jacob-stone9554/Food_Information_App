@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from models import FoodDetails, LabelNutrients
+from models import FoodDetails, LabelNutrients, FoodSummary, SearchResponse
 from usda_client import search_foods as usda_search_foods, get_food_by_id as usda_food_by_id, USDAClientError
 
 app = FastAPI(
@@ -47,7 +47,22 @@ def search_foods(
     except USDAClientError as e: 
         raise HTTPException(status_code=502, detail=str(e))
 
-    return raw
+    foods = [
+        FoodSummary(
+            fdc_id=item.get("fdcId"),
+            description=item.get("description", ""),
+            brand_owner=item.get("brandOwner"),
+            data_type=item.get("dataType"),
+        )
+        for item in raw.get("foods", [])
+    ]
+
+    return SearchResponse(
+        total_hits=raw.get("totalHits", 0),
+        current_page=raw.get("currentPage", page),
+        total_pages=raw.get("totalPages", 1),
+        foods=foods,
+    )
 
 @app.get(
     "/food/{fdc_id}",
