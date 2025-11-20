@@ -51,13 +51,14 @@ downloads/
 
 # -------------------------------
 # Flutter / Dart
-# -------------------------------
+# -------------------------------s
 
 # Dart / Pub state
 /frontend/.dart_tool/
 /frontend/.packages
 /frontend/.pub/
 /frontend/.pub-cache/
+flutter_export_environment.sh
 
 # Flutter build output
 /frontend/build/
