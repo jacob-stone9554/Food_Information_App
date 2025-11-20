@@ -14,7 +14,16 @@ The implementation handles API key management, error handling, and pagination.
 
 ## Environment Setup
 
-Information about environment setup will go here.
+The user must have Python version 3.8+ installed.
+
+1. Download the codebase
+2. Navigate to the backend directory
+3. Create an activate a virtual environment with
+    `python -m venv .venv`
+4. Install dependenciess with `pip install -r requirements.txt`
+5. Copy the example .env file into `.env`
+6. Paste your API key into the `USDA_API_KEY` placeholder
+7. Start the API by running the following command (from the backend/ directory): `uvicorn main:app --reload`
 
 ## Required Endpoints
 

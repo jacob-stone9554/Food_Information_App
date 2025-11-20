@@ -11,12 +11,14 @@ The Flutter application will have the following features allow the user to compl
 * View paginated results of the food search in a scrollable list
 * Tap a food item to view key nutrient information for it
 * Navigate between Search and Details screens
-* Basic loading and error states
-* Responsive layout
+* Basic loading states
 
-## Architecture and State Management
+## Setup 
 
-The application uses the Provider state management pattern to manage API callss and application sstate. Separate services and model classses are used to keep the UI layer clean and maintainable.
+1. Download the codebase
+2. Navigate to the frontend folder
+3. Install Flutter dependencies with `flutter pub get`
+4. Run the Flutter app on the target platform (for example, to launch to Chrome run `flutter run -d chrome`)
 
 ## User Flow
 
